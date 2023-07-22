@@ -12,16 +12,6 @@ app.use('/api/user', UserRouter);
 const PORT = process.env.PORT || 3000;
 mongoose.set("strictQuery", false)
 
-// mongoose.connect(process.env.MONGO_URI)
-//    .then(() => {
-//        app.listen(process.env.PORT, () => {
-//            console.log("Database connected successfully and server is listening on this port 5000");
-//        });
-//    })
-//    .catch((err) => {
-//        console.log(err);
-//        // process.exit(1);
-//    });
    const connectDB = async () =>{
     try {
         const conn = await mongoose.connect(process.env.MONGO_URI);
@@ -41,3 +31,14 @@ mongoose.set("strictQuery", false)
    console.log(`Listening on Port ${PORT}`);
    })
    })
+
+   // mongoose.connect(process.env.MONGO_URI)
+//    .then(() => {
+//        app.listen(process.env.PORT, () => {
+//            console.log("Database connected successfully and server is listening on this port 5000");
+//        });
+//    })
+//    .catch((err) => {
+//        console.log(err);
+//        // process.exit(1);
+//    });

@@ -16,9 +16,9 @@ const  AuthController = {
                 }
             })
             if(errArr.length > 0){
-                res.send(sendResponse(false, errArr, "All fields should be filled")).status(404);
-            }
-            else{
+                res.send(sendResponse(false, null, "All fields should be filled", errArr)).status(400);
+                return;
+            } else{
                 const hashPassword = await bcrypt.hash(obj.password, 10);
                 console.log(hashPassword);
                 obj.password = hashPassword;
